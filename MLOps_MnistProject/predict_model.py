@@ -1,11 +1,12 @@
-#%%
+# %%
 from pathlib import Path
-import torch
-from torch.utils.data import DataLoader, TensorDataset
-import os
-import click
 
-#%%
+import click
+import torch
+from torch.utils.data import DataLoader
+
+
+# %%
 @click.group()
 def cli():
     """Command line interface."""
@@ -17,7 +18,7 @@ def cli():
 @click.option("--data_path", default="data/processed/test_dataset.pt", help="test dataloader to use for prediction")
 def predict(
     model_path: str,
-    data_path: str,    
+    data_path: str,
 ) -> list:
     """Run prediction for a given model and dataloader.
 
@@ -49,4 +50,3 @@ cli.add_command(predict)
 
 if __name__ == "__main__":
     cli()
-

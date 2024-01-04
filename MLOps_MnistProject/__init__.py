@@ -1,2 +1,0 @@
-from MLOps_MnistProject.models.model import MyNeuralNet
-from MLOps_MnistProject.predict_model import predict
