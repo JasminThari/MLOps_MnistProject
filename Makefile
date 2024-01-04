@@ -40,6 +40,14 @@ clean:
 data:
 	python $(PROJECT_NAME)/data/make_dataset.py
 
+## make train
+train: data
+	python $(PROJECT_NAME)/train_model.py
+
+## make predict
+predict: 
+	python $(PROJECT_NAME)/predict_model.py
+
 #################################################################################
 # Documentation RULES                                                           #
 #################################################################################
