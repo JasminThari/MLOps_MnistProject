@@ -4,7 +4,7 @@ from torch.utils.data import DataLoader
 import pytest
 import os 
 
-data_folder = os.path.join(PATH_DATA, "processed")  
+data_folder = os.path.join(PATH_DATA, "processed/train_dataset.pt")  
 
 @pytest.mark.skipif(not os.path.exists(data_folder), reason="Data files not found")
 def test_data():
