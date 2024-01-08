@@ -1,8 +1,9 @@
-from mypaths import PATH_DATA
-import torch
-from torch.utils.data import DataLoader
+import os
+
 import pytest
-import os 
+import torch
+from mypaths import PATH_DATA
+from torch.utils.data import DataLoader
 
 data_folder = os.path.join(PATH_DATA, "processed/train_dataset.pt")  
 

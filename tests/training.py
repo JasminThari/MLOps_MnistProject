@@ -1,7 +1,8 @@
-from mypaths import PROJECT_ROOT, PATH_DATA
-import torch
-from torch.utils.data import DataLoader
 import sys
+
+import torch
+from mypaths import PATH_DATA, PROJECT_ROOT
+from torch.utils.data import DataLoader
 
 sys.path.append(PROJECT_ROOT)
 #from MLOps_MnistProject.train_model import train_step

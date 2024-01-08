@@ -1,9 +1,12 @@
 import os
 from datetime import datetime as dt
+
 import matplotlib.pyplot as plt
 import torch
 from torch.utils.data import DataLoader
+
 from models.model import MyNeuralNet
+
 
 def train_step(model, optimizer, criterion, images, labels):
     images = images.unsqueeze(1)  

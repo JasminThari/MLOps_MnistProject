@@ -1,10 +1,12 @@
-from mypaths import PROJECT_ROOT
-import torch
-import sys  
+import sys
+
 import pytest
+import torch
+from mypaths import PROJECT_ROOT
 
 sys.path.append(PROJECT_ROOT)
 from MLOps_MnistProject.models.model import MyNeuralNet
+
 
 @pytest.mark.parametrize("batch_size", [64, 128])
 def test_model(batch_size):
