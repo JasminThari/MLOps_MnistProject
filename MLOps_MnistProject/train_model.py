@@ -1,12 +1,18 @@
 import os
 from datetime import datetime as dt
-
 import matplotlib.pyplot as plt
 import torch
 from torch.utils.data import DataLoader
-
 from models.model import MyNeuralNet
 
+def train_step(model, optimizer, criterion, images, labels):
+    images = images.unsqueeze(1)  
+    optimizer.zero_grad()
+    y_pred = model(images)
+    loss = criterion(y_pred, labels)
+    loss.backward()
+    optimizer.step()
+    return loss
 
 def train():
     data_path = "data/processed"
@@ -23,14 +29,9 @@ def train():
     for epoch in range(epochs):
         train_loss = 0
         for images, labels in train_loader:
-            images = images.unsqueeze(1)  #     reshaped_train_data = train_images.view(-1, 1, 28, 28)
-            optimizer.zero_grad()
-            y_pred = model(images)
-            loss = criterion(y_pred, labels)
-            loss.backward()
-            optimizer.step()
-
+            loss = train_step(model, optimizer, criterion, images, labels)
             train_loss += loss.item()
+        
         avg_train_loss = train_loss / len(train_loader)
         train_losses.append(avg_train_loss)
         print(f"Epoch: {epoch}, Loss: {avg_train_loss}")
