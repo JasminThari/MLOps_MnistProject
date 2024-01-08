@@ -45,7 +45,7 @@ train: data
 	python $(PROJECT_NAME)/train_model.py
 
 ## make predict
-predict: 
+predict:
 	python $(PROJECT_NAME)/predict_model.py
 
 #################################################################################

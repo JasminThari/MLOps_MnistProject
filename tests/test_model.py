@@ -13,7 +13,7 @@ def test_model(batch_size):
     dummy_data = torch.randn(batch_size, 1, 28, 28)
     model = MyNeuralNet()
     y_pred = model(dummy_data)
-    assert y_pred.shape == (batch_size, 10)    
+    assert y_pred.shape == (batch_size, 10)
 
 
 # tests/test_model.py

@@ -6,7 +6,7 @@ import os
 def make_preprocessing():
     raw_data_folder = "data/raw"
     processed_data_folder = "data/processed"
-    
+
     train_images_data = []
     train_target_data = []
     test_images_data = []
@@ -54,17 +54,17 @@ def make_preprocessing():
 def make_dataset():
     processed_data_folder = "data/processed"
     folder = os.path.join(processed_data_folder)
-    
+
     train_images = torch.load(f"{folder}/train_images_data.pt")
     train_target = torch.load(f"{folder}/train_target_data.pt")
     train_dataset = TensorDataset(train_images, train_target)
-    
+
     torch.save(train_dataset, f"{folder}/train_dataset.pt")
-    
+
     test_images = torch.load(f"{folder}/test_images_data.pt")
     test_target = torch.load(f"{folder}/test_target_data.pt")
     test_dataset = TensorDataset(test_images, test_target)
-    
+
     torch.save(test_dataset, f"{folder}/test_dataset.pt")
 
 

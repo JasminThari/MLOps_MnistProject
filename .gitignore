@@ -23,7 +23,7 @@ __pycache__/
 # C extensions
 *.so
 
-# files 
+# files
 data
 # Distribution / packaging
 .Python

@@ -36,7 +36,7 @@ class MyNeuralNet(torch.nn.Module):
         if x.ndim != 4:
             raise ValueError('Expected input to a 4D tensor')
         if x.shape != torch.Size([x.shape[0], 1, 28, 28]):
-            raise ValueError(f'Expected input to a tensor of shape [N,1,28,28], got {x.shape}') 
+            raise ValueError(f'Expected input to a tensor of shape [N,1,28,28], got {x.shape}')
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
         x = x.view(-1, 64 * 7 * 7)  # Flatten the tensor for fully connected layers

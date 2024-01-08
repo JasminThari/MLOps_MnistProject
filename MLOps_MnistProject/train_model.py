@@ -9,7 +9,7 @@ from models.model import MyNeuralNet
 
 
 def train_step(model, optimizer, criterion, images, labels):
-    images = images.unsqueeze(1)  
+    images = images.unsqueeze(1)
     optimizer.zero_grad()
     y_pred = model(images)
     loss = criterion(y_pred, labels)
@@ -34,7 +34,7 @@ def train():
         for images, labels in train_loader:
             loss = train_step(model, optimizer, criterion, images, labels)
             train_loss += loss.item()
-        
+
         avg_train_loss = train_loss / len(train_loader)
         train_losses.append(avg_train_loss)
         print(f"Epoch: {epoch}, Loss: {avg_train_loss}")

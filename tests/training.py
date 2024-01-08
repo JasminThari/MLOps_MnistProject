@@ -15,12 +15,12 @@ sys.path.append(PROJECT_ROOT)
 #     criterion = torch.nn.CrossEntropyLoss()
 #     dataset = torch.load(f"{PATH_DATA}/processed/train_dataset.pt")
 #     dataloader = DataLoader(dataset, batch_size=64, shuffle=True)
-    
+
 #     for batch_data, batch_labels in dataloader:
 #         if first_batch:
 #             first_batch = False
 #         else:
 #             break  # only check first batch
-    
+
 #     train_step(model, optimizer, criterion, batch_data, batch_labels)
 #     assert model.conv1.weight.grad is not None
