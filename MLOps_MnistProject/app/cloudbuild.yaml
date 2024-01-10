@@ -1,10 +1,10 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/quantum-tracker-410709/gcp_test_app', '.']
+  args: ['build', '-t', 'gcr.io/quantum-tracker-410709/continuously-service:latest', '.']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/quantum-tracker-410709/gcp_test_app']
+  args: ['push', 'gcr.io/quantum-tracker-410709/continuously-service:latest']
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
@@ -13,8 +13,6 @@ steps:
   - 'deploy'
   - 'continuously-service'
   - '--image'
-  - 'gcr.io/quantum-tracker-410709/gcp_test_app'
+  - 'gcr.io/quantum-tracker-410709/continuously-service:latest'
   - '--region'
   - 'europe-west1'
-images:
-  - 'gcr.io/quantum-tracker-410709/gcp_test_app'
