@@ -1,7 +1,7 @@
 steps:
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/quantum-tracker-410709/continuously-service:latest', '.']
+  args: ['build', '-t', 'gcr.io/quantum-tracker-410709/continuously-service:latest', '.', '-f', 'simple_fastapi_app.dockerfile']
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/quantum-tracker-410709/continuously-service:latest']
